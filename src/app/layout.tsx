@@ -15,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header>
           <Link href="/"> top </Link>
           <Link href="/signup"> signup </Link>
+          <Link href="/signin"> signin </Link>
         </header>
         <hr />
         {children}
