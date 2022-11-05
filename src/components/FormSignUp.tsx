@@ -10,6 +10,7 @@ import type { SubmitHandler } from 'react-hook-form';
 
 type FormValues = {
   email: string;
+  username: string;
   password: string;
 };
 
@@ -17,6 +18,7 @@ const FormSignUp: React.FC = () => {
   const { register, handleSubmit } = useForm<FormValues>({
     defaultValues: {
       email: '',
+      username: '',
       password: '',
     },
   });
@@ -25,6 +27,11 @@ const FormSignUp: React.FC = () => {
     const { data, error } = await supabase.auth.signUp({
       email: formData.email,
       password: formData.password,
+      options: {
+        data: {
+          username: formData.username,
+        },
+      },
     });
 
     if (error) console.error(error);
@@ -39,6 +46,17 @@ const FormSignUp: React.FC = () => {
           <input
             type="email"
             {...register('email', {
+              required: true,
+            })}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          username:
+          <input
+            type="text"
+            {...register('username', {
               required: true,
             })}
           />
