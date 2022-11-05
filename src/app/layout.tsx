@@ -3,6 +3,8 @@ import React from 'react';
 
 import Link from 'next/link';
 
+import CurrentUser from '../components/CurrentUser';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -12,10 +14,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/Users/sogawa/work/lab/supabase-with-nextjs-13/public/favicon.ico" />
       </head>
       <body>
-        <header>
-          <Link href="/"> top </Link>
-          <Link href="/signup"> signup </Link>
-          <Link href="/signin"> signin </Link>
+        <header style={{ display: 'flex', gap: '1rem' }}>
+          <Link href="/">top</Link>
+          <div style={{ flexGrow: 1 }} />
+          <CurrentUser />
         </header>
         <hr />
         {children}
