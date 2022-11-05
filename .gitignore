@@ -62,3 +62,6 @@ next-env.d.ts
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
+
+# supabase generated files
+src/lib/database.types.ts
