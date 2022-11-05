@@ -1,16 +1,19 @@
 'use client';
+
 import React, { useCallback } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+
+import { useForm } from 'react-hook-form';
+
 import { supabase } from '../lib/supabase';
+
+import type { SubmitHandler } from 'react-hook-form';
 
 type FormValues = {
   email: string;
   password: string;
 };
 
-export type FormSignUpProps = {};
-
-const FormSignUp: React.FC<FormSignUpProps> = () => {
+const FormSignUp: React.FC = () => {
   const { register, handleSubmit } = useForm<FormValues>({
     defaultValues: {
       email: '',
@@ -53,7 +56,7 @@ const FormSignUp: React.FC<FormSignUpProps> = () => {
         </label>
       </div>
 
-      <button>Sign Up</button>
+      <button type="submit">Sign Up</button>
     </form>
   );
 };

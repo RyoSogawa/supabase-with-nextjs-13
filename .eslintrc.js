@@ -81,6 +81,7 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
     'jsx-quotes': ['error', 'prefer-double'],
   },
   ignorePatterns: ['.eslintrc.*'],
